@@ -55,7 +55,7 @@ export const userLogin= async(req, res) =>{
             return res.status(200).json({message:"Invalid credentials"})
         }
         else{
-            console.log(user.role)
+           
                 const token=jwt.sign({id:user._id, role:user.role}, process.env.JWT_SECRET,{expiresIn:"1h"})
             return res.json({message:"Successfully Login", token:token})
         }
@@ -144,7 +144,7 @@ Your App Team`
             if(err){
                 console.log(err)
             }else{
-                console.log("Email sent")
+               
                  res.status(200).json({message:"OTP sent successfully"})
 
             }
